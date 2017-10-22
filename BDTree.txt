@@ -1,0 +1,78 @@
+1)
+i print my Decision Tree in depth order:
+the first column represents first attribute which need to be classified, then the rows below this column represents its values. then second column represents the second attributes needs to be classified under the first attribute’s corresponding values, and etc. the leaves nodes are the classification result, which are-“Yes”,”No”,”Tie”.
+
+for example: the first attribute is “Occupied”,the values of “Occupied” is “High”,”Moderate”,”Low”. the second attribute under value “High” is “Location”,the second attribute under value “Moderate” is “Location”,the second attribute under value “Low” is “Prices”. and etc.
+
+Decision Tree:
+	Occupied
+	High
+		Location
+		Talpiot
+			No
+		City-Center
+			Yes
+		German-Colony
+			No
+		Ein-Karem
+			Tie
+		Mahane-Yehuda
+			Yes
+	Moderate
+		Location
+		Talpiot
+			Price
+			Expensive
+				Tie
+			Normal
+				Yes
+			Cheap
+				No
+		City-Center
+			Yes
+		German-Colony
+			VIP
+			No
+				No
+			Yes
+				Yes
+		Ein-Karem
+			Yes
+		Mahane-Yehuda
+			Yes
+	Low
+		Price
+		Expensive
+			No
+		Normal
+			Location
+			Talpiot
+				Tie
+			City-Center
+				Music
+				Loud
+					Tie
+				Quiet
+					VIP
+					No
+						Favorite Beer
+						No
+							Tie
+						Yes
+							Tie
+					Yes
+						Tie
+			German-Colony
+				Tie
+			Ein-Karem
+				No
+			Mahane-Yehuda
+				Tie
+		Cheap
+			No
+
+2) the prediction result is Yes
+3) How to improve my code:
+my code bases on the idea of ID3, so it can’t process continues value, only for distribute value. so i think i can manage the continues data to make it distributed. and my code cannot process missing data. i think for the further implementation, i can set default value for the missing data bases on the major value in this attribute. further more, if there is conflicting data like the input data No.18 and No.21, my process just classify all the attributes to the end. it’s meaningless and will cause over fitting. so i think i can pruning at the suitable condition.
+
+
